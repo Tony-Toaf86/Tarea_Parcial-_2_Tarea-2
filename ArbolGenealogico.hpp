@@ -6,29 +6,25 @@
 #include <vector>
 using namespace std;
 
-class ArbolGenealogico
-    {
-        private:
-        vector<Persona*> personas;
+class ArbolGenealogico {
+private:
+    vector<Persona*> personas;
 
-        Persona* buscarRecursivo (Persona* actual, const string& nombre);
-        void mostrarAscendenciaRec (Persona* persona, int nivel);
-        void mostrarDescendenciaRec (Persona* persona, int nivel);
-        void eliminarSubarbolRec (Persona* persona);
+    Persona* buscarRec(Persona* actual, string nombre);
+    void mostrarAscRec(Persona* persona, int nivel);
+    void mostrarDescRec(Persona* persona, int nivel);
+    void eliminarRec(Persona* persona);
 
-        public:
-        ArbolGenealogico();
-        ArbolGenealogico();
+public:
+    ArbolGenealogico();
+    ~ArbolGenealogico();
 
-        void insertPersona 
-        (const string& nombre,
-        const string& fecha,
-        const string& nombrePadre,
-        const string& nombreMadre);
-        
-        Persona* buscarPersona(const string& nombre);
-        void mostrarAscendencia (const string& nombre);
-        void mostrarDescendencia (const string& nombre);
-        void eliminarSubarbol(const string& nombre);
-    };
+    void insertar(string nombre, string fecha, string nombrePadre, string nombreMadre);
+    Persona* buscar(string nombre);
+    void mostrarAscendencia(string nombre);
+    void mostrarDescendencia(string nombre);
+    void eliminarSubarbol(string nombre);
+    void menu();
+};
+
 #endif
